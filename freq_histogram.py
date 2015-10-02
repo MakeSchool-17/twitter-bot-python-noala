@@ -28,9 +28,9 @@ def cumulative_distribution(histogram_creator_return):
 def sample_from_distribution(cumulative_distribution_return):
     token_tuple = cumulative_distribution_return[-1]
     tokens = token_tuple[-1]
+    rand_index = random.randint(0, tokens - 1)
 
     for word, limit in cumulative_distribution_return:
-        rand_index = random.randint(0, tokens - 1)
         if rand_index < limit:
             return word
 
